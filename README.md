@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# GitHub Repository Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React frontend exercise that searches public GitHub repositories through the GitHub Search API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Search repositories by a text query.
+- Display repository names, descriptions, star counts and fork counts.
+- Sort results by stars or forks, with ascending/descending controls.
+- Navigate result pages using pagination controls.
+- Manage fetched data with Redux and Redux Thunk.
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React 17, JavaScript, Redux, Redux Thunk, Axios, React Router 5, Bootstrap 5 and SCSS.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Run locally
 
-### `npm test`
+Requires Node.js and npm. From the repository directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+npm start
+```
 
-### `npm run build`
+Open `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm run build
+npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+These are the configured scripts. The project uses an older React Scripts 4 toolchain and may need a compatible Node.js environment or dependency updates.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Source guide
 
-### `npm run eject`
+- `src/pages/Search/SearchBar.js`: search input and navigation.
+- `src/pages/Repo/Repo.js`: results, sorting and pagination.
+- `src/redux/store/Test/actions.js`: request to GitHub's repository search endpoint.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Scope and limitations
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a learning exercise, not a GitHub client for production use. Search availability depends on GitHub's API and unauthenticated rate limits. The current pagination page count is fixed in the UI rather than calculated from the API total. No production-readiness or current test-pass claim is made. Do not put an access token in browser source code.
